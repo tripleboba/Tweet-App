@@ -2,6 +2,13 @@
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
+ *
+ * Fonts import:
+ * Source Sans Pro and Bugee Regular 400
+ * Light 300     | Light 300 italic
+ * Semi-bold 600 | Semi-bold 600 italic
+ * font-family: 'Bungee', cursive;
+ * font-family: 'Source Sans Pro', sans-serif;
  */
 html {
   box-sizing: border-box;
@@ -11,13 +18,26 @@ html {
 }
 
 /*
- * Global layout stuff
+ * Global layout stuff for <body> and <main>
  */
-
+img {
+  max-width: 100%;
+  max-width: 100%;
+  display: block;
+}
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  color: ghostwhite;
+  /* background-color: tan; */
+  background-color: #918b7f;
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-weight: light;
+  font-size: 20px;
+}
+main {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #918b7f;
 }
 
 /*

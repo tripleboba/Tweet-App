@@ -1,0 +1,38 @@
+/*
+ * Fonts import:
+ * Source Sans Pro and Bungee  Regular 400
+ * Light 300     | Light 300 italic
+ * Semi-bold 600 | Semi-bold 600 italic
+ * font-family: 'Bungee', cursive;
+ * font-family: 'Source Sans Pro', sans-serif;
+ */
+
+/* ---- Top nav bar ---- */
+nav {
+  color: ghostwhite;
+  background-color: #3c3b37;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: light;
+  height: 120px;
+  /* full width on any screen*/
+  width: 100%;
+  /* space on right and left*/
+  padding: 0 1.5em;
+  /* content inside: 'tweeter' & 'write a tweet' */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#tweeterLogo {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+}
+.navItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.writeTweetNav {
+  font-size: 20px;
+}

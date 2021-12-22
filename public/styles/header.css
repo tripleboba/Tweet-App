@@ -1,0 +1,29 @@
+/*
+ * Fonts import:
+ * Source Sans Pro and Bungee  Regular 400
+ * Light 300     | Light 300 italic
+ * Semi-bold 600 | Semi-bold 600 italic
+ * font-family: 'Bungee', cursive;
+ * font-family: 'Source Sans Pro', sans-serif;
+ */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c3b37;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  height: 400px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.profilePic > img {
+  object-fit: contain;
+  height: 8em;
+  width: auto;
+}
+.profileName > p {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #3c3b37;
+}
