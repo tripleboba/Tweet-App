@@ -13,6 +13,7 @@
   border-bottom: 3px solid black;
   margin-bottom: 0.3em;
   background-color: transparent;
+  font-weight: bold;
 }
 
 .tweet-box-funcs {
@@ -30,6 +31,10 @@
 .counter {
   color: #3c3b36;
 }
+.warning {
+  color: #ba0b0b;
+}
+
 /* styling placeholder */
 textarea::placeholder {
   /* font-size: 0.6em; */
@@ -43,4 +48,15 @@ textarea:focus, input.form-control:focus {
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
+}
+
+/* transparent scollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color:transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #3c3b36;
 }
