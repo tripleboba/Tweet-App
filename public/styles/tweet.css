@@ -1,0 +1,71 @@
+/* Tweets article styling in tweets-container section */
+
+/* section - border outside*/
+.tweets-container{
+  border: 3px solid black;
+}
+.tweets-container {
+  box-shadow: 6px 6px 0 -1px #3156ba6b;
+}
+
+/* inside contents*/
+.tweet {
+  margin: 1em 1em 0 1em;
+}
+
+/* tweet header elements */
+.tweet > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tweet-ava-name {
+  display: flex;
+  flex-direction: row;
+}
+.tweet-ava-name .name {
+  margin-left: 1em;
+}
+.tweet-ava-name .avatar {
+  height: 80%;
+  width: auto;
+}
+.handle {
+  align-self: flex-end;
+  font-weight: 600;
+  color: #3156ba6b;
+}
+
+/* tweet content */
+.tweet .tweet-content .text{
+  margin-left: 4%;
+  font-weight: 600;
+}
+
+/* tweet footer elements */
+.tweet > footer {
+  border-top: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tweet .create_at {
+  margin: -2% 0 0% 4%;
+  font-size: 70%;
+}
+
+.tweet .icons {
+  display: flex;
+  font-size: 80%;
+  margin-right: 3%;
+}
+.icon {
+  padding: 0.2em;
+  font-size: 90%;
+  color: #4155a1
+}
+.icon:hover {
+  color: #fa6121;
+  font-size:100%;   /* make icon popup */
+}
