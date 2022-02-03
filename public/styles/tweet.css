@@ -1,12 +1,12 @@
 /* Tweets article styling in tweets-container section */
 
 /* section - border outside*/
-.tweets-container{
-  border: 3px solid black;
+.tweets-containter{
+  border: 3px solid #3c3b37;
 }
-.tweets-container {
+/* .tweets-container {
   box-shadow: 6px 6px 0 -1px #3156ba6b;
-}
+} */
 
 /* inside contents*/
 .tweet {
@@ -20,6 +20,7 @@
   justify-content: space-between;
 }
 .tweet-ava-name {
+  color: black;
   display: flex;
   flex-direction: row;
 }
@@ -33,7 +34,6 @@
 .handle {
   align-self: flex-end;
   font-weight: 600;
-  color: #3156ba6b;
 }
 
 /* tweet content */
@@ -44,14 +44,16 @@
 
 /* tweet footer elements */
 .tweet > footer {
-  border-top: 3px solid black;
+  border-top: 3px solid #3c3b37;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
-.tweet .create_at {
-  margin: -2% 0 0% 4%;
+.tweet .create-at {
+  display: flex;
+  margin-left: 3%;
+  /* margin: -2% 0 0% 4%; */
   font-size: 70%;
 }
 
@@ -63,9 +65,9 @@
 .icon {
   padding: 0.2em;
   font-size: 90%;
-  color: #4155a1
+  color: #3c3b37
 }
 .icon:hover {
-  color: #fa6121;
-  font-size:100%;   /* make icon popup */
+  color: #ffcc56;
+  font-size:120%;   /* make icon popup */
 }
