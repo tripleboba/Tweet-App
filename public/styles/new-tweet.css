@@ -28,6 +28,11 @@
   padding: 0.1em 0.5em;
   border: none;
 }
+.tweet-button:hover {
+  color: #3c3b36;
+  background-color: #ffcc56;
+}
+
 .counter {
   color: #3c3b36;
 }
