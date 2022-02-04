@@ -1,14 +1,5 @@
 /* Tweets article styling in tweets-container section */
 
-/* section - border outside*/
-/* .tweets-containter{
-  border: 3px solid #3c3b37;
-} */
-/* .tweets-container:hover {
-  box-shadow: 6px 6px 0 -1px #3156ba6b;
-} */
-
-/* inside contents*/
 .tweet {
   border: 3px solid #3c3b37;
   margin-bottom: 1em;
@@ -18,7 +9,6 @@
   box-shadow: 6px 6px 0 -1px #3c3b35a1;
 }
 
-/* tweet header elements */
 .tweet > header {
   display: flex;
   flex-direction: row;
@@ -48,7 +38,6 @@
   font-weight: bold;
 }
 
-/* tweet footer elements */
 .tweet > footer {
   border-top: 3px solid #3c3b37;
   display: flex;
