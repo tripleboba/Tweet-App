@@ -44,54 +44,70 @@ $(document).ready( () => {
     return $tweet;
   };
 
+  // get tweets in db to load to tweets-container
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       $(".tweets-containter").append(createTweetElement(tweet));
     }
   };
+    // hardcode tweet data
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
+  // renderTweets(data);
 
-  // hardcode tweet data
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-  renderTweets(data);
+  // Make GET request to /tweets and receive [] of tweets as JSON
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets",
+      method: "GET"
+    })
+    .then((data) => {
+      renderTweets(data);
+      // console.log("tweet from renderTweets:", data);
+    })
+    .catch(err => {
+      console.log("error in loadTweets:", err);
+    });
+  };
 
-  // Handle new-tweet submit button using jQuery
-  $(".new-tweet form").submit((e) => {
+  // AJAX handle submit tweet-box using jQuery
+  $(".new-tweet form").submit(e => {
     // alert($("#tweet-text").val());
     e.preventDefault();
 
     // jQuery data.serialize() handle POST request for submit tweet button
-    let serializedData = $(".new-tweet form").serialize();
-    $.ajax({url: "/tweets", data: serializedData, method: "POST", success: () => {
-      // loadTweets();
-      console.log(serializedData);
-      console.log($("#tweet-text").serialize());
-    }}); 
-
+    const serializedData = $(".new-tweet form").serialize();
+    $.ajax({
+      url: "/tweets",
+      data: serializedData,
+      method: "POST",
+      success: () => {
+        console.log(serializedData);
+        // console.log($("#tweet-text").serialize());
+        loadTweets();
+    }});
   });
 
-  //
-  
 });
