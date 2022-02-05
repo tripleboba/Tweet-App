@@ -1,7 +1,7 @@
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * Reminder: Use (and do all your DOM work in) jQuery"s document ready function
  */
 
 /**
@@ -14,7 +14,7 @@ $(document).ready( () => {
   const createTweetElement = (tweet) => {
     // append like this will have problem with security of the web -- fix later
     const $tweet = $(`<article class="tweet"></article`);
-    const $header = $(`
+    const $tweetHeader = $(`
       <header>
         <div class="tweet-ava-name">
           <img class="avatar"src=${tweet.user.avatars}>
@@ -23,15 +23,15 @@ $(document).ready( () => {
         <p class="handle">${tweet.user.handle}</p>
       </header>
     `);
-    const $div = $(`
+    const $tweetBody = $(`
       <div class="tweet-content">
         <p class="text">${tweet.content.text}</p>
       </div>
     `);
-    const $footer = $(`
+    const $tweetFooter = $(`
       <footer>
         <div class="create-at">
-          <p>create at: ${timeago.format(tweet.created_at)}</p>
+          <p>created at: ${timeago.format(tweet.created_at)}</p>
         </div>
         <div class="icons">
           <div class="icon"><i class="fas fa-thumbs-up"></i></div>
@@ -40,13 +40,13 @@ $(document).ready( () => {
         </div>
       </footer>
     `);
-    $tweet.append($header, $div, $footer);
+    $tweet.append($tweetHeader, $tweetBody, $tweetFooter);
     return $tweet;
   };
 
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
-      $('.tweets-containter').append(createTweetElement(tweet));
+      $(".tweets-containter").append(createTweetElement(tweet));
     }
   };
 
@@ -74,7 +74,24 @@ $(document).ready( () => {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
   renderTweets(data);
+
+  // Handle new-tweet submit button using jQuery
+  $(".new-tweet form").submit((e) => {
+    // alert($("#tweet-text").val());
+    e.preventDefault();
+
+    // jQuery data.serialize() handle POST request for submit tweet button
+    let serializedData = $(".new-tweet form").serialize();
+    $.ajax({url: "/tweets", data: serializedData, method: "POST", success: () => {
+      // loadTweets();
+      console.log(serializedData);
+      console.log($("#tweet-text").serialize());
+    }}); 
+
+  });
+
+  //
   
 });

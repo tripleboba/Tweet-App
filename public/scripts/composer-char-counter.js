@@ -25,6 +25,7 @@ $(document).ready(function() {
     $(".counter").text(charsLeft).removeClass("warning");
     if (charsLeft < 0) {
       $(".counter").addClass("warning");
+      // $("#tweet-text").addClass("warning")
     }
   };
 });
