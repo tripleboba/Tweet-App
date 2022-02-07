@@ -47,7 +47,8 @@ $(document).ready( () => {
   // get tweets in db to load to tweets-container
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
-      $(".tweets-containter").append(createTweetElement(tweet));
+      // prepend load the tweets upside down!! (don't use reverse())
+      $(".tweets-containter").prepend(createTweetElement(tweet));
     }
   };
     // hardcode tweet data
@@ -124,7 +125,8 @@ $(document).ready( () => {
         $(".counter").text("140");
         loadTweets();
     }});
-  
   });
+  // initially loads old tweets in db when first open
+  loadTweets();
 
 });
