@@ -17,21 +17,21 @@ $(document).ready( () => {
     const $tweetHeader = $(`
       <header>
         <div class="tweet-ava-name">
-          <img class="avatar"src=${tweet.user.avatars}>
-          <p class="name">${tweet.user.name}</p>
+          <img class="avatar"src=${escape(tweet.user.avatars)}>
+          <p class="name">${escape(tweet.user.name)}</p>
         </div>
-        <p class="handle">${tweet.user.handle}</p>
+        <p class="handle">${escape(tweet.user.handle)}</p>
       </header>
     `);
     const $tweetBody = $(`
       <div class="tweet-content">
-        <p class="text">${tweet.content.text}</p>
+        <p class="text">${escape(tweet.content.text)}</p>
       </div>
     `);
     const $tweetFooter = $(`
       <footer>
         <div class="create-at">
-          <p>created at: ${timeago.format(tweet.created_at)}</p>
+          <p>created at: ${escape(timeago.format(tweet.created_at))}</p>
         </div>
         <div class="icons">
           <div class="icon"><i class="fas fa-thumbs-up"></i></div>
@@ -98,7 +98,7 @@ $(document).ready( () => {
     // alert($("#tweet-text").val());
     e.preventDefault();
 
-    // handle tweet-box input
+    // handle tweet box valid input
     const $tweetInput = $("#tweet-text").val();
     if ($tweetInput.length === 0) {
       alert("Empty input!");
@@ -126,7 +126,13 @@ $(document).ready( () => {
         loadTweets();
     }});
   });
-  // initially loads old tweets in db when first open
-  loadTweets();
 
+  // initially loads old tweets in db when first open
+  // loadTweets();
+
+  const escape = str => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 });
