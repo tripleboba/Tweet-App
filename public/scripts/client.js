@@ -143,7 +143,7 @@ $(document).ready( () => {
     return div.innerHTML;
   }
 
-  $(".writeTweetNav").click(() => {
+  $(".navItems").on('click',() => {
     if ($(".new-tweet").first().is(":hidden")) {
       $(".new-tweet").slideDown(1000);
       $("#tweet-text").focus();

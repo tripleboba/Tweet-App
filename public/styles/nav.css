@@ -9,7 +9,7 @@
 
 /* ---- Top nav bar ---- */
 nav {
-  color: ghostwhite;
+  color: #918b7f;
   background-color: #3c3b37;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: light;
@@ -29,12 +29,21 @@ nav {
   font-size: 30px;
   cursor: pointer;
 }
+#tweeterLogo:hover {
+  text-shadow: 2px 5px #918b7f;
+  color: #ffcc56;
+}
+
 .navItems {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+}
+.navItems:hover {
+  color: #ffcc56;
 }
 .writeTweetNav {
   font-size: 20px;
-  cursor: pointer;
+  margin: auto;
 }
