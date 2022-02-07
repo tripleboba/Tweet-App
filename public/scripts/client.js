@@ -94,23 +94,27 @@ $(document).ready( () => {
     });
   };
 
+  let $errorBox = $("<p>").addClass("error-box");
+  $errorBox.prependTo($(".error-noti")).hide();
+
   // AJAX handle submit tweet-box using jQuery
   $(".new-tweet form").submit(e => {
     // alert($("#tweet-text").val());
     e.preventDefault();
-
+    
     // handle tweet box valid input
     const $tweetInput = $("#tweet-text").val();
     if ($tweetInput.length === 0) {
-      alert("Empty input!");
+      $errorBox.text("🙈 Empty tweet! Add some thoughts 💭").slideDown();
       return;
     } else if ($tweetInput.length > 140) {
-      alert ("Too long!");
+      $errorBox.text("🙉 Too long thoughts 💭! Remove some words!").slideDown();
       // clear the tweet-box
-      $("#tweet-text").val("");
-      $(".counter").text("140").removeClass("warning");
+      // $("#tweet-text").val("");
+      // $(".counter").text("140").removeClass("warning");
       return;
     }
+    $errorBox.slideUp();
     // jQuery data.serialize() handle POST request for submit tweet button
     const serializedData = $(".new-tweet form").serialize();
     $.ajax({
@@ -143,19 +147,4 @@ $(document).ready( () => {
     return div.innerHTML;
   }
 
-  $(".navItems").on('click',() => {
-    if ($(".new-tweet").first().is(":hidden")) {
-      $(".new-tweet").slideDown(1000);
-      $("#tweet-text").focus();
-    } else {
-      $(".new-tweet").slideUp(1000);
-    }
-  });
-
-  // $('.writeTweetNav').click(() => {
-
-  //   $('.new-tweet').toggle('fast', () => {
-  //     $('#tweet-text').focus();
-  //   });
-  // });
 });

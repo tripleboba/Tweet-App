@@ -44,10 +44,12 @@
 }
 
 /* warning error box */
-.error {
-  border: 3px solid #ba0b0b;
-  color: #ba0b0b;
+.error-box {
   font-weight: bold;
+  color: #ba0b0b;
+  border: 3px solid #ba0b0b;
+  border-radius: 1em;
+  padding: 0.5em;
 }
 
 
