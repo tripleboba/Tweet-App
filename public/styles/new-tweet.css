@@ -14,6 +14,7 @@
   margin-bottom: 0.3em;
   background-color: transparent;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .tweet-box-funcs {
@@ -27,12 +28,14 @@
   background-color: #3c3b36;
   padding: 0.1em 0.5em;
   border: none;
+  cursor: pointer;
 }
 .tweet-button:hover {
   color: #3c3b36;
   background-color: #ffcc56;
 }
 
+/* for counter number display */
 .counter {
   color: #3c3b36;
 }
@@ -50,7 +53,6 @@
 
 /* styling placeholder */
 textarea::placeholder {
-  /* font-size: 0.6em; */
   font-weight: bold;
   color: #3c3b36;
 }

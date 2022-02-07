@@ -111,7 +111,6 @@ $(document).ready( () => {
       $(".counter").text("140").removeClass("warning");
       return;
     }
-
     // jQuery data.serialize() handle POST request for submit tweet button
     const serializedData = $(".new-tweet form").serialize();
     $.ajax({
@@ -129,10 +128,6 @@ $(document).ready( () => {
   });
 
   // initially loads old tweets in db when first open
-  // $.get("/tweets")
-  //   .then((data) => {
-  //     renderTweets(data);
-    // });
     $.ajax({
       url: "/tweets",
       method: "GET"
@@ -147,4 +142,20 @@ $(document).ready( () => {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
+
+  $(".writeTweetNav").click(() => {
+    if ($(".new-tweet").first().is(":hidden")) {
+      $(".new-tweet").slideDown(1000);
+      $("#tweet-text").focus();
+    } else {
+      $(".new-tweet").slideUp(1000);
+    }
+  });
+
+  // $('.writeTweetNav').click(() => {
+
+  //   $('.new-tweet').toggle('fast', () => {
+  //     $('#tweet-text').focus();
+  //   });
+  // });
 });

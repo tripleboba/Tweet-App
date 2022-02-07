@@ -36,7 +36,8 @@ body {
 main {
   display: block;
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 2em;
   background-color: #918b7f;
 }
 

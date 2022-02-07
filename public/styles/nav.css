@@ -27,6 +27,7 @@ nav {
 #tweeterLogo {
   font-family: 'Bungee', cursive;
   font-size: 30px;
+  cursor: pointer;
 }
 .navItems {
   display: flex;
@@ -35,4 +36,5 @@ nav {
 }
 .writeTweetNav {
   font-size: 20px;
+  cursor: pointer;
 }

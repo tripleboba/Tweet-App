@@ -65,4 +65,5 @@
 .icon:hover {
   color: #ffcc56;
   font-size:120%;   /* make icon popup */
+  cursor: pointer;
 }
