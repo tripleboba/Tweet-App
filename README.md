@@ -16,3 +16,14 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Final Product
+![Home page for desktop screen 1st load](display/1.png)
+
+![Made a tweet](display/2.png)
+![Error noti empty input](display/3.png)
+![Error noti too long input](display/4.png)
+![CSS handle hover on elements](display/5.png)
+![Responsive display on smaller screen](display/6.png)
+![Error noti on small screen](display/7.png)
