@@ -97,6 +97,19 @@ $(document).ready( () => {
     // alert($("#tweet-text").val());
     e.preventDefault();
 
+    // handle tweet-box input
+    const $tweetInput = $("#tweet-text").val();
+    if ($tweetInput.length === 0) {
+      alert("Empty input!");
+      return;
+    } else if ($tweetInput.length > 140) {
+      alert ("Too long!");
+      // clear the tweet-box
+      $("#tweet-text").val("");
+      $(".counter").text("140").removeClass("warning");
+      return;
+    }
+
     // jQuery data.serialize() handle POST request for submit tweet button
     const serializedData = $(".new-tweet form").serialize();
     $.ajax({
@@ -104,10 +117,14 @@ $(document).ready( () => {
       data: serializedData,
       method: "POST",
       success: () => {
-        console.log(serializedData);
+        // console.log(serializedData);
         // console.log($("#tweet-text").serialize());
+        // clear the tweet-box after submit
+        $("#tweet-text").val("");
+        $(".counter").text("140");
         loadTweets();
     }});
+  
   });
 
 });

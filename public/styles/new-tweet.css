@@ -40,6 +40,14 @@
   color: #ba0b0b;
 }
 
+/* warning error box */
+.error {
+  border: 3px solid #ba0b0b;
+  color: #ba0b0b;
+  font-weight: bold;
+}
+
+
 /* styling placeholder */
 textarea::placeholder {
   /* font-size: 0.6em; */
