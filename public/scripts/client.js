@@ -47,7 +47,7 @@ $(document).ready( () => {
   // get tweets in db to load to tweets-container
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
-      // prepend load the tweets upside down!! (don't use reverse())
+      // prepend load the tweets upside down!! (don"t use reverse())
       $(".tweets-containter").prepend(createTweetElement(tweet));
     }
   };
@@ -85,7 +85,8 @@ $(document).ready( () => {
       method: "GET"
     })
     .then((data) => {
-      renderTweets(data);
+      renderTweets([data[data.length - 1]]);
+      // if load data into renderTweets(), every tweets in db will be loaded again with new tweet
       // console.log("tweet from renderTweets:", data);
     })
     .catch(err => {
@@ -128,8 +129,19 @@ $(document).ready( () => {
   });
 
   // initially loads old tweets in db when first open
-  // loadTweets();
+  // $.get("/tweets")
+  //   .then((data) => {
+  //     renderTweets(data);
+    // });
+    $.ajax({
+      url: "/tweets",
+      method: "GET"
+    })
+    .then((data) => {
+      renderTweets(data);
+    })
 
+  // handle cross-site scripting
   const escape = str => {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
